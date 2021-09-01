@@ -150,38 +150,6 @@ body {
          </a>       
     </div>
 
-    <div class="ignoreCall">
-          <a id=left_button class="but_def">
-              <button id="left_button"> 
-                  <i style="background: red; color: white;" class="fa fa-arrow-left" aria-hidden="true"></i>
-              </button>
-         </a>       
-    </div>
-
-    <div class="ignoreCall">
-          <a id=up_button class="but_def">
-              <button id="lup_button"> 
-                  <i style="background: red; color: white;" class="fa fa-arrow-up" aria-hidden="true"></i>
-              </button>
-         </a>       
-    </div>
-
-    <div class="ignoreCall">
-          <a id=right_button class="but_def">
-              <button id="right_button"> 
-                  <i style="background: red; color: white;" class="fa fa-arrow-right" aria-hidden="true"></i>
-              </button>
-         </a>       
-    </div>
-
-    <div class="ignoreCall">
-          <a id=down_button class="but_def">
-              <button id="down_button"> 
-                  <i style="background: red; color: white;" class="fa fa-arrow-down" aria-hidden="true"></i>
-              </button>
-         </a>       
-    </div>
-
 </div>
 
 
@@ -201,54 +169,6 @@ button.onclick = function() {
         div.style.display = 'block';
     }
 };
-
-  $(function() {
-    $('a#left_button').bind('click', function() {
-      $.getJSON('/left_move', {
-        a: $('input[name="a"]').val(),
-        b: $('input[name="b"]').val()
-      }, function(data) {
-        $("#result").text(data.result);
-      });
-      return false;
-    });
-  });
-
- $(function() {
-    $('a#up_button').bind('click', function() {
-      $.getJSON('/up_move', {
-        a: $('input[name="a"]').val(),
-        b: $('input[name="b"]').val()
-      }, function(data) {
-        $("#result").text(data.result);
-      });
-      return false;
-    });
-  });
-
- $(function() {
-    $('a#right_button').bind('click', function() {
-      $.getJSON('/right_move', {
-        a: $('input[name="a"]').val(),
-        b: $('input[name="b"]').val()
-      }, function(data) {
-        $("#result").text(data.result);
-      });
-      return false;
-    });
-  });
-
- $(function() {
-    $('a#down_button').bind('click', function() {
-      $.getJSON('/down_move', {
-        a: $('input[name="a"]').val(),
-        b: $('input[name="b"]').val()
-      }, function(data) {
-        $("#result").text(data.result);
-      });
-      return false;
-    });
-  });
    
 </script>
 
