@@ -14,7 +14,6 @@ import six.moves.urllib as urllib
 import os
 import tarfile
 
-from camera import VideoCamera
 import threading
 
 from six import BytesIO
