@@ -192,7 +192,11 @@ frame_rate_calc = 1
 freq = cv2.getTickFrequency()
 
 # App Globals (do not edit)
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
+
+@app.route('/path')
+def path():
+    return app.instance_path #you can customze index.html here
 
 @app.route('/')
 def index():
