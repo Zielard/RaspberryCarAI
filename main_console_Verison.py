@@ -166,6 +166,21 @@ from picamera.array import PiRGBArray
 from picamera import PiCamera
 # initialize the camera and grab a reference to the raw camera capture
 
+# FOR ARDUNIO
+import pyfirmata
+from time import sleep
+import math
+#from tkinter import *
+
+#First engine
+global pin6
+global pin5
+global pin4
+
+#Second engine
+global pin9
+global pin10
+global pin11
         
 cap = cv2.VideoCapture(0)
 
@@ -177,17 +192,11 @@ frame_rate_calc = 1
 freq = cv2.getTickFrequency()
 
 # App Globals (do not edit)
-app = Flask(__name__, template_folder='templates')
+app = Flask(__name__)
 
 @app.route('/')
-def index_2():
-    print('Hello world')
-    print(app.instance_path)
-    return 'Hello world'
-    
-
-@app.route('/AI/')
 def index():
+    print(app.instance_path)
     return render_template('index.html') #you can customze index.html here
 
 def gen(frame_rate_calc):
@@ -208,9 +217,6 @@ def gen(frame_rate_calc):
         time1 = (t2-t1)/freq
         frame_rate_calc= 1/time1
         
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            break
-                # clear the stream in preparation for the next frame
         yield (b'--frame\r\n'
                b'Content-Type: image/jpeg\r\n\r\n' + jpeg + b'\r\n\r\n')
     
