@@ -154,7 +154,7 @@ def doinference(image_np):
 
     return image_np_with_detections
 
-MODEL_URL="http://download.tensorflow.org/models/object_detection/tf2/20200711/ssd_mobilenet_v2_320x320_coco17_tpu-8.tar.gz"
+MODEL_URL="http://download.tensorflow.org/models/object_detection/tf2/20210210/centernet_mobilenetv2fpn_512x512_coco17_od.tar.gz"
 
 os.chdir("/tensorflow/models/research/object_detection/test_data/")
 downloadModel(MODEL_URL)
